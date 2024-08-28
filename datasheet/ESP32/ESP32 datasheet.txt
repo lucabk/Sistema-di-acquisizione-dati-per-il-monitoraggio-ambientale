@@ -1,0 +1,31 @@
+-usiamo la 3.3V
+
+-non usare i pin 6-7-8-9-10-11 -> memoria dedicata SPI
+
+-I2C: L'ESP32 ha due canali I2C e qualsiasi pin può essere impostato come SDA
+o SCL. Quando si usa l'ESP32 con l'Arduino IDE, i pin I2C di default sono: 
+GPIO 21 (SDA), GPIO 22 (SCL).
+
+-ESP32 può andare in deep sleep (pg 12)
+
+-La tensione di 5V non deve essere collegata a nessun pin del chip ESP32!
+I pin non tollerano 5V, l'applicazione di più di 3,3V su qualsiasi pin
+distruggerà il chip.
+I pin GPIO da 34 a 39 sono GPI - pin solo input. Questi pin non hanno
+resistenze interne di pull-up o pull-down. Non possono essere usati come
+uscite, quindi usate questi pin solo come ingressi: GPIO 34, GPIO 35, GPIO
+36, GPIO 39
+
+- Tutti i pin che possono agire come uscite possono essere
+utilizzati come pin PWM (i GPIO da 34 a 39 non possono generare PWM). Per configurare un segnale PWM, è necessario definire questi parametri nel
+codice: Frequenza del segnale, Ciclo di lavoro, canale PWM, GPIO dove si
+vuole emettere il segnale.
+
+-Alcuni GPIO cambiano il loro stato a HIGH o emettono segnali PWM 
+all'avvio o al reset. Questo significa che se le uscite sono collegate a questi 
+GPIO si possono ottenere risultati inaspettati quando l'ESP32 si resetta o si 
+avvia.
+GPIO 1, GPIO 3, GPIO 5, GPIO 6 to GPIO 11 (collegato alla memoria flash 
+SPI integrata dell'ESP32 - non si raccomanda l'uso), GPIO 14, GPIO 15.
+
+-

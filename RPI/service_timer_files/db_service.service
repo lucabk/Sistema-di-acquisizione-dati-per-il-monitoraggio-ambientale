@@ -1,0 +1,18 @@
+[Unit]
+Description=Servizio di monitoraggio ambientale-database
+After=network.target sync_service.timer
+Requires=sync_service.timer
+
+[Service]
+Type=simple
+User=rpi
+Group=rpi
+LimitNOFILE=65536
+ExecStart=/home/rpi/service_db.sh
+KillMode=control-group
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=db_service.service
+

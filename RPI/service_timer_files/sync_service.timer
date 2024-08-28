@@ -1,0 +1,10 @@
+[Unit]
+Description = avvia il file sync_service.service ogni minuto
+
+[Timer]
+OnBootSec=10s
+OnUnitActiveSec=1min
+Persistent=false
+
+[Install]
+WantedBy=timers.target

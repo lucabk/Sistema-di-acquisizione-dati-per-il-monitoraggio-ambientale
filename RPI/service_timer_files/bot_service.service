@@ -1,0 +1,18 @@
+[Unit]
+Description=Servizio di monitoraggio ambientale-chatbot
+After=network.target db_service.service
+Requires=db_service.service
+
+[Service]
+Type=simple
+User=rpi
+Group=rpi
+LimitNOFILE=65536
+ExecStart=/home/rpi/service_bot.sh
+KillMode=control-group
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=service_bot.service
+

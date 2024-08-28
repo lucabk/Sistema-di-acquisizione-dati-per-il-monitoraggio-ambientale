@@ -1,0 +1,9 @@
+- ARDUINO UNO: 	https://docs.arduino.cc/hardware/uno-rev3
+- RTC: 			https://cdn-learn.adafruit.com/downloads/pdf/adafruit-pcf8523-real-time-clock.pdf	
+				https://learn.adafruit.com/adafruit-pcf8523-real-time-clock/rtc-with-arduino
+- BMP280:		https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/arduino-test
+				https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/downloads
+				https://cdn-shop.adafruit.com/datasheets/BST-BMP280-DS001-11.pdf (BOSCH)
+				https://learn.adafruit.com/introducing-adafruit-stemma-qt/technical-specs (Connettori STEMMA QT)
+- FAN:			https://noctua.at/pub/media/wysiwyg/Noctua_PWM_specifications_white_paper.pdf
+- ESP32			https://www.az-delivery.de/it/collections/kostenlose-e-books

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!--  <meta http-equiv="refresh" content="10"> Ricarica la pagina ogni 300 secondi (5 minuti) -->
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <title>Progetto SOD</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="titolo">
+        <h1>Progetto Sistemi Operativi Dedicati
+            <span>Sistema di acquisizione dati per il monitoraggio ambientale</span>
+        </h1>
+    </div>
+     <div class="container"> 
+        <div class="left-column"> 
+          <h2>Database - storico dei dati</h2>
+            <div class="table-container">
+                <table border="1">
+                    <tr>
+                        <th>Data</th>
+                        <th>Temperatura</th>
+                        <th>Pressione</th>
+                        <th>RPM</th>
+                    </tr>
+        <!-- Cicla attraverso i dati passati dall'app Flask -->
+        {% for row in data %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+
+<div class="right-column"> 
+<h2>Media dei valori degli ultimi 5 minuti</h2>
+<div class="card">
+<h3>TEMPERATURA</h3>
+<p>{{temp_mean}} C</p>
+            </div>
+<div class="card">
+<h3>PRESSIONE</h3>
+<p> {{pres_mean}} atm </p>
+            </div>
+<div class="card">
+<h3>VELOCITA' VENTOLA </h3>
+<p> {{rpm_mean}} rpm</p>
+
+            </div>
+        </div>
+</div> 
+</body>
+</html>

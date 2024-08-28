@@ -1,0 +1,17 @@
+[Unit]
+Description=Servizio di monitoraggio ambientale-sincronizzazione RTC
+After=network.target
+
+[Service]
+Type=oneshot
+User=rpi
+Group=rpi
+LimitNOFILE=65536
+ExecStart=/home/rpi/service_sync.sh
+KillMode=control-group
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=service_sync.service
+
